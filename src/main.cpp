@@ -1765,8 +1765,8 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     if (nPrevHeight == 0) {
         nSubsidy = 5000 * COIN;
     }
-    if (nPrevHeight < 500){
-        return 5 * COIN;
+    if (nPrevHeight > 0 && nPrevHeight < 500){
+        nSubsidy =  5 * COIN;
     }
     /** else if (nPrevHeight < Params().RAMP_TO_BLOCK() / 2) {
         nSlowSubsidy /= Params().RAMP_TO_BLOCK();
@@ -1834,13 +1834,14 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         return nSubsidy;
     else
         return nSlowSubsidy;
-    */
+
     // yearly decline of production by 25% per 3 months.
      for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
         nSubsidy -= nSubsidy * 0.25;
     }
-
-    return fSuperblockPartOnly ? 0 : nSubsidy;
+ */
+    //return fSuperblockPartOnly ? 0 : nSubsidy;
+    return  nSubsidy;
 }
 
 
