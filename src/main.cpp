@@ -1744,12 +1744,12 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
-    if (nPrevHeight == 0) {
+    /**if (nPrevHeight == 0) {
         return 3400000 * COIN;
     }
     if (nPrevHeight < 800) {
 	return 0 * COIN;
-    }
+    }*/
 
     //CAmount nSubsidy = 50 * COIN;
     CAmount nSubsidy = 5000 * COIN;
@@ -1760,7 +1760,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
             return 5000 * COIN;
     }
 
-    printf("SubsidyInterval %d",consensusParams.nSubsidyHalvingInterval);
+
     // POW Year 0
     if (nPrevHeight == 0) {
         nSubsidy = 5000 * COIN;
@@ -1768,6 +1768,37 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     if (nPrevHeight > 0 && nPrevHeight < 500){
         nSubsidy =  5 * COIN;
     }
+    if (nPrevHeight > 500 && nPrevHeight < 5000){
+        nSubsidy =  5000 * COIN;
+    }
+    /**if (nPrevHeight > 5000 && nPrevHeight < 50000){
+        nSubsidy =  (5000 * COIN) * 0.75;
+    }
+    if (nPrevHeight > 50000 && nPrevHeight < 100000){
+        nSubsidy =  (5000 * COIN) * 0.65;
+    }
+    if (nPrevHeight > 100000 && nPrevHeight < 350000){
+        nSubsidy =  (4375 * COIN) * 0.55;
+    }
+    if (nPrevHeight > 350000 && nPrevHeight < 500000){
+        nSubsidy =  (4375 * COIN) * 0.45;
+    }
+    if (nPrevHeight > 350000 && nPrevHeight < 500000){
+        nSubsidy =  (4375 * COIN) * 0.45;
+    }
+    if (nPrevHeight > 500000 && nPrevHeight < 750000){
+        nSubsidy =  (4375 * COIN) * 0.45;
+    }
+    if (nPrevHeight > 750000 && nPrevHeight < 1000000){
+        nSubsidy =  (4375 * COIN) * 0.35;
+    }
+    if (nPrevHeight > 1000000){
+        nSubsidy =  (4375 * COIN) * 0.25;
+    }
+    if (nPrevHeight > 1000000){
+        nSubsidy =  (4375 * COIN) ;
+    }
+     */
     /** else if (nPrevHeight < Params().RAMP_TO_BLOCK() / 2) {
         nSlowSubsidy /= Params().RAMP_TO_BLOCK();
         nSlowSubsidy *= nHeight;
