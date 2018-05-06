@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+  <key>LSMinimumSystemVersion</key>
+  <string>10.7.0</string>
+
+  <key>LSArchitecturePriority</key>
+  <array>
+    <string>x86_64</string>
+  </array>
+
+  <key>CFBundleIconFile</key>
+  <string>bitcoin.icns</string>
+
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+
+  <key>CFBundleGetInfoString</key>
+  <string>2.0.0, Copyright © 2009-2018 The Bitcoin Core developers, 2014-2018 The Reef Core developers</string>
+
+  <key>CFBundleShortVersionString</key>
+  <string>2.0.0</string>
+
+  <key>CFBundleVersion</key>
+  <string>2.0.0</string>
+
+  <key>CFBundleSignature</key>
+  <string>????</string>
+
+  <key>CFBundleExecutable</key>
+  <string>Reef-Qt</string>
+  
+  <key>CFBundleName</key>
+  <string>Reef-Qt</string>
+
+  <key>LSHasLocalizedDisplayName</key>
+  <true/>
+
+  <key>CFBundleIdentifier</key>
+  <string>org.reef.Reef-Qt</string>
+
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>CFBundleURLName</key>
+      <string>org.reef.ReefPayment</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>reef</string>
+      </array>
+    </dict>
+  </array>
+
+  <key>UTExportedTypeDeclarations</key>
+  <array>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>org.reef.paymentrequest</string>
+      <key>UTTypeDescription</key>
+      <string>Reef payment request</string>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.data</string>
+      </array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.mime-type</key>
+        <string>application/x-reef-payment-request</string>
+        <key>public.filename-extension</key>
+        <array>
+          <string>reefcoinmentrequest</string>
+        </array>
+      </dict>
+    </dict>
+  </array>
+
+  <key>CFBundleDocumentTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>LSItemContentTypes</key>
+      <array>
+        <string>org.reef.paymentrequest</string>
+      </array>
+      <key>LSHandlerRank</key>
+      <string>Owner</string>
+    </dict>
+  </array>
+
+  <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+
+  <key>NSHighResolutionCapable</key>
+    <string>True</string>
+
+  <key>LSAppNapIsDisabled</key>
+    <string>True</string>
+  
+  <key>LSApplicationCategoryType</key>
+    <string>public.app-category.finance</string>
+</dict>
+</plist>
