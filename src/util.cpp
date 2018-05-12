@@ -631,8 +631,8 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
         // Create empty reef.conf if it does not excist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
         if (configFile != NULL)
-            char addnodestr[] = "onlynet=ipv4\naddnode=91.121.166.208:23058\naddnode=159.89.90.181:23058\naddnode=138.68.91.38:23058\naddnode=37.187.108.47:23058\n";
-            fwrite(addnodestr , 1 , sizeof(addnodestr) , configFile);
+            //char addnodestr[] = "onlynet=ipv4\naddnode=91.121.166.208:23058\naddnode=159.89.90.181:23058\naddnode=138.68.91.38:23058\naddnode=37.187.108.47:23058\n";
+           //fwrite(addnodestr , 1 , sizeof(addnodestr) , configFile);
             fclose(configFile);
         return; // Nothing to read, so just return
     }
