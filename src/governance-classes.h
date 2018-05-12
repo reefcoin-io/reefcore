@@ -4,7 +4,7 @@
 #ifndef GOVERNANCE_CLASSES_H
 #define GOVERNANCE_CLASSES_H
 
-//#define ENABLE_REDEN_DEBUG
+//#define ENABLE_REEF_DEBUG
 
 #include "base58.h"
 #include "governance.h"

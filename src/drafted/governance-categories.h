@@ -4,7 +4,7 @@
 
 	* means the category has an associated class
 	
-	CReefNetwork: REDEN NETWORK (ROOT)
+	CReefNetwork: REEF NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
 		vector<CReefProject> vecProjects;
@@ -19,7 +19,7 @@
 
 */
 
-	// REDEN NETWORK (ROOT)
+	// REEF NETWORK (ROOT)
 	// 	-> NETWORK VARIABLE
 	// 		-> switch, setting
 	// 	-> CATEGORIES
@@ -49,7 +49,7 @@
 	// 			-> USER1 (only users are allowed here in this scope)
 	// 			-> USER2
 	// 		-> GROUP2 (EVO)
-	// 			-> VALUEOVERRIDE (STORE=REDENDRIVE)
+	// 			-> VALUEOVERRIDE (STORE=REEFDRIVE)
 	// 			-> USER1
 
 	// 	-> COMPANIES

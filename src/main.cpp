@@ -1744,134 +1744,63 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
-    /**if (nPrevHeight == 0) {
-        return 3400000 * COIN;
-    }
-    if (nPrevHeight < 800) {
-	return 0 * COIN;
-    }*/
+
 
     //CAmount nSubsidy = 50 * COIN;
-    CAmount nSubsidy = 5000 * COIN;
-
-    if (Params().NetworkIDString() == CBaseChainParams::TESTNET) {
-
-        if (nPrevHeight < 500)
-            return 5000 * COIN;
-    }
+    CAmount nPOW = 5 * COIN;
+    CAmount nSubsidy = 0;
+    //
 
 
-    // POW Year 0
+
+
+    // POW
     if (nPrevHeight == 0) {
-        nSubsidy = 5000 * COIN;
+        nPOW = 0 * COIN;
+        nSubsidy = nPOW;
     }
-    if (nPrevHeight > 0 && nPrevHeight < 500){
-        nSubsidy =  5 * COIN;
+    if (nPrevHeight > 0 && nPrevHeight < 501){
+        nPOW =  5 * COIN;
+        nSubsidy = nPOW;
     }
-    if (nPrevHeight > 500 && nPrevHeight < 5000){
-        nSubsidy =  5000 * COIN;
+    if (nPrevHeight > 500 && nPrevHeight < 5001){
+        nPOW =  5000 * COIN;
+        nSubsidy = nPOW;
     }
-    /**if (nPrevHeight > 5000 && nPrevHeight < 50000){
-        nSubsidy =  (5000 * COIN) * 0.75;
+    if (nPrevHeight > 5000 && nPrevHeight < 50001){
+        nPOW =  4375 * COIN;
+        nSubsidy = nPOW * 0.75;
     }
-    if (nPrevHeight > 50000 && nPrevHeight < 100000){
-        nSubsidy =  (5000 * COIN) * 0.65;
+    if (nPrevHeight > 50000 && nPrevHeight < 100001){
+        nPOW =  3750 * COIN;
+        nSubsidy = nPOW * 0.65;
     }
-    if (nPrevHeight > 100000 && nPrevHeight < 350000){
-        nSubsidy =  (4375 * COIN) * 0.55;
+    if (nPrevHeight > 100000 && nPrevHeight < 350001){
+        nPOW =  3125 * COIN;
+        nSubsidy = nPOW * 0.55;
     }
-    if (nPrevHeight > 350000 && nPrevHeight < 500000){
-        nSubsidy =  (4375 * COIN) * 0.45;
+    if (nPrevHeight > 350000 && nPrevHeight < 500001){
+        nPOW =  2500 * COIN;
+        nSubsidy = nPOW * 0.45;
     }
-    if (nPrevHeight > 350000 && nPrevHeight < 500000){
-        nSubsidy =  (4375 * COIN) * 0.45;
+    if (nPrevHeight > 500000 && nPrevHeight < 750001){
+        nPOW =  1875 * COIN;
+        nSubsidy = nPOW * 0.35;
     }
-    if (nPrevHeight > 500000 && nPrevHeight < 750000){
-        nSubsidy =  (4375 * COIN) * 0.45;
+    if (nPrevHeight > 750000 && nPrevHeight < 1000001){
+        nPOW =  1250 * COIN;
+        nSubsidy = nPOW * 0.25;
     }
-    if (nPrevHeight > 750000 && nPrevHeight < 1000000){
-        nSubsidy =  (4375 * COIN) * 0.35;
+    if (nPrevHeight > 1000000 && nPrevHeight < 1250001){
+        nPOW =  625 * COIN;
+        nSubsidy = nPOW * 0.15;
     }
-    if (nPrevHeight > 1000000){
-        nSubsidy =  (4375 * COIN) * 0.25;
-    }
-    if (nPrevHeight > 1000000){
-        nSubsidy =  (4375 * COIN) ;
-    }
-     */
-    /** else if (nPrevHeight < Params().RAMP_TO_BLOCK() / 2) {
-        nSlowSubsidy /= Params().RAMP_TO_BLOCK();
-        nSlowSubsidy *= nHeight;
-    } else if (nPrevHeight < Params().RAMP_TO_BLOCK()) {
-        nSlowSubsidy /= Params().RAMP_TO_BLOCK();
-        nSlowSubsidy *= nHeight;
-    } else if (nPrevHeight <= 86399 && nHeight >= Params().RAMP_TO_BLOCK()) {
-        nSubsidy = 50 * COIN;
-    } else if (nPrevHeight <= 172799 && nHeight >= 86400) {
-        nSubsidy = 43.75 * COIN;
-    } else if (nPrevHeight <= 259199 && nHeight >= 172800) {
-        nSubsidy = 37.5 * COIN;
-    } else if (nPrevHeight <= Params().LAST_POW_BLOCK() && nHeight >= 259200) {
-        nSubsidy = 31.25 * COIN;
-
-        // POS Year 1
-    } else if (nHeight <= 431999 && nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = 25 * COIN;
-    } else if (nHeight <= 518399 && nHeight >= 432000) {
-        nSubsidy = 21.875 * COIN;
-    } else if (nHeight <= 604799 && nHeight >= 518400) {
-        nSubsidy = 18.750 * COIN;
-    } else if (nHeight <= 691199 && nHeight >= 604800) {
-        nSubsidy = 15.625 * COIN;
-
-        // POS Year 2
-    } else if (nHeight <= 777599 && nHeight >= 691200) {
-        nSubsidy = 12.50 * COIN;
-    } else if (nHeight <= 863999 && nHeight >= 777600) {
-        nSubsidy = 10.938 * COIN;
-    } else if (nHeight <= 950399 && nHeight >= 864000) {
-        nSubsidy = 9.375 * COIN;
-    } else if (nHeight <= 1036799 && nHeight >= 950400) {
-        nSubsidy = 7.812 * COIN;
-
-        // POS Year 3
-    } else if (nHeight <= 1123199 && nHeight >= 1036800) {
-        nSubsidy = 6.250 * COIN;
-    } else if (nHeight <= 1209599 && nHeight >= 1123200) {
-        nSubsidy = 5.469 * COIN;
-    } else if (nHeight <= 1295999 && nHeight >= 1209600) {
-        nSubsidy = 4.688 * COIN;
-    } else if (nHeight <= 1382399 && nHeight >= 1296000) {
-        nSubsidy = 3.906 * COIN;
-
-        // POS Year 4
-    } else if (nHeight <= 1468799 && nHeight >= 1382400) {
-        nSubsidy = 3.125 * COIN;
-    } else if (nHeight <= 1555199 && nHeight >= 1468800) {
-        nSubsidy = 2.734 * COIN;
-    } else if (nHeight <= 1641599 && nHeight >= 1555200) {
-        nSubsidy = 2.344 * COIN;
-    } else if (nHeight <= 1727999 && nHeight >= 1641600) {
-        nSubsidy = 1.953 * COIN;
-
-    } else if (nHeight > 1728000) {
-        nSubsidy = 1.625 * COIN;
-    } else {
-        nSubsidy = 0 * COIN;
+    if (nPrevHeight > 1250000){
+        nPOW =  625 * COIN;
+        nSubsidy = nPOW * 0.05;
     }
 
-    // Make sure we return the correct nSubsidy value -Serfywerfy
-    if (nHeight >= Params().RAMP_TO_BLOCK())
-        return nSubsidy;
-    else
-        return nSlowSubsidy;
 
-    // yearly decline of production by 25% per 3 months.
-     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-        nSubsidy -= nSubsidy * 0.25;
-    }
- */
-    //return fSuperblockPartOnly ? 0 : nSubsidy;
     return  nSubsidy;
 }
 
@@ -3931,7 +3860,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                              REJECT_INVALID, "bad-cb-multiple");
 
 
-    // REDEN : CHECK TRANSACTIONS FOR INSTANTSEND
+    // REEF : CHECK TRANSACTIONS FOR INSTANTSEND
 
     if(sporkManager.IsSporkActive(SPORK_3_INSTANTSEND_BLOCK_FILTERING)) {
         // We should never accept block which conflicts with completed transaction lock,
@@ -3951,17 +3880,17 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                     instantsend.Relay(hashLocked);
                     LOCK(cs_main);
                     mapRejectedBlocks.insert(make_pair(block.GetHash(), GetTime()));
-                    return state.DoS(0, error("CheckBlock(REDEN): transaction %s conflicts with transaction lock %s",
+                    return state.DoS(0, error("CheckBlock(REEF): transaction %s conflicts with transaction lock %s",
                                                 tx.GetHash().ToString(), hashLocked.ToString()),
                                      REJECT_INVALID, "conflict-tx-lock");
                 }
             }
         }
     } else {
-        LogPrintf("CheckBlock(REDEN): spork is off, skipping transaction locking checks\n");
+        LogPrintf("CheckBlock(REEF): spork is off, skipping transaction locking checks\n");
     }
 
-    // END REDEN
+    // END REEF
 
     // Check transactions
     BOOST_FOREACH(const CTransaction& tx, block.vtx)
@@ -6487,12 +6416,14 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         // and thus, the maximum size any matched object can have) in a filteradd message
         if (vData.size() > MAX_SCRIPT_ELEMENT_SIZE)
         {
+            printf("VData larger than 520 bytes");
             Misbehaving(pfrom->GetId(), 100);
         } else {
             LOCK(pfrom->cs_filter);
             if (pfrom->pfilter)
                 pfrom->pfilter->insert(vData);
             else
+                printf("VData larger than 520 bytes");
                 Misbehaving(pfrom->GetId(), 100);
         }
     }

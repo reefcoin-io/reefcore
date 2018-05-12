@@ -35,8 +35,8 @@
 
 // Uncomment the following line to enable debugging messages
 // or enable on a per file basis prior to inclusion of util.h
-//#define ENABLE_REDEN_DEBUG
-#ifdef ENABLE_REDEN_DEBUG
+//#define ENABLE_REEF_DEBUG
+#ifdef ENABLE_REEF_DEBUG
 #define DBG( x ) x
 #else
 #define DBG( x ) 

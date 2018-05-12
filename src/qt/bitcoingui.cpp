@@ -615,6 +615,7 @@ void BitcoinGUI::setClientModel(ClientModel *clientModel)
         connect(clientModel, SIGNAL(showProgress(QString,int)), this, SLOT(showProgress(QString,int)));
 
         rpcConsole->setClientModel(clientModel);
+
 #ifdef ENABLE_WALLET
         if(walletFrame)
         {
