@@ -626,8 +626,9 @@ bool CMasternodeBroadcast::CheckOutpoint(int& nDos)
             return false;
         }
 
-        if(coins.vout[vin.prevout.n].nValue != 5000 * COIN) {
-            LogPrint("masternode", "CMasternodeBroadcast::CheckOutpoint -- Masternode UTXO should have 5000 REEF, masternode=%s\n", vin.prevout.ToStringShort());
+        //Masternode requires 500000 REEF
+        if(coins.vout[vin.prevout.n].nValue != 500000 * COIN) {
+            LogPrint("masternode", "CMasternodeBroadcast::CheckOutpoint -- Masternode UTXO should have 500000 REEF, masternode=%s\n", vin.prevout.ToStringShort());
             return false;
         }
 

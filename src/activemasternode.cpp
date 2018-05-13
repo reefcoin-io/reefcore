@@ -209,8 +209,9 @@ void CActiveMasternode::ManageStateInitial()
         return;
     }
 
-    if(pwalletMain->GetBalance() < 5000*COIN) {
-        LogPrintf("CActiveMasternode::ManageStateInitial -- %s: Wallet balance is < 5000 REEF\n", GetStateString());
+    //Masternode require intial collateral of 500000 REEF
+    if(pwalletMain->GetBalance() < 500000*COIN) {
+        LogPrintf("CActiveMasternode::ManageStateInitial -- %s: Wallet balance is < 500000 REEF\n", GetStateString());
         return;
     }
 

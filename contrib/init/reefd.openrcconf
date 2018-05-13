@@ -1,25 +1,25 @@
-# /etc/conf.d/protond: config file for /etc/init.d/protond
+# /etc/conf.d/reefd: config file for /etc/init.d/reefd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/protoncore/proton.conf"
+#BITCOIND_CONFIGFILE="/etc/reefcore/reef.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/protond"
+#BITCOIND_PIDDIR="/var/run/reefd"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/protond.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/reefd.pid"
 
-# Where to write protond data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/protond"
+# Where to write reefd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/reefd"
 
-# User and group to own protond process
-#BITCOIND_USER="protoncore"
-#BITCOIND_GROUP="protoncore"
+# User and group to own reefd process
+#BITCOIND_USER="reefcore"
+#BITCOIND_GROUP="reefcore"
 
-# Path to protond executable
-#BITCOIND_BIN="/usr/bin/protond"
+# Path to reefd executable
+#BITCOIND_BIN="/usr/bin/reefd"
 
-# Nice value to run protond under
+# Nice value to run reefd under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

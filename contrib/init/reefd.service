@@ -1,15 +1,15 @@
 [Unit]
-Description=Proton's distributed currency daemon
+Description=Reef's distributed currency daemon
 After=network.target
 
 [Service]
-User=protoncore
-Group=protoncore
+User=reefcore
+Group=reefcore
 
 Type=forking
-PIDFile=/var/lib/protond/protond.pid
-ExecStart=/usr/bin/protond -daemon -pid=/var/lib/protond/protond.pid \
--conf=/etc/protoncore/proton.conf -datadir=/var/lib/protond -disablewallet
+PIDFile=/var/lib/reefd/reefd.pid
+ExecStart=/usr/bin/reefd -daemon -pid=/var/lib/reefd/reefd.pid \
+-conf=/etc/reefcore/reef.conf -datadir=/var/lib/reefd -disablewallet
 
 Restart=always
 PrivateTmp=true

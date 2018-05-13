@@ -123,15 +123,15 @@ public:
 
         //genesis = CreateGenesisBlock(1523764584, 360505, 0x1e0ffff0, 1, 50 * COIN);
 
-        uint32_t nTime = 1525618820;
-        uint32_t nNonce = 2379636;
+        uint32_t nTime = 1526191846;
+        uint32_t nNonce = 4585107;
         uint32_t nBits = 504365040;
         int32_t nVersion = 1;
         //const CAmount& genesisReward = 50 * COIN;
         const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         consensus.hashGenesisBlock = genesis.GetHash();
-    /**
+/*
         if(genesis.GetHash() != uint256S("0x"))
             {
                     bool fNegative;
@@ -160,10 +160,10 @@ public:
                     printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
                     printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
             }
-        */
+        **/
             //printf("block.hashGenesisBlock = %s\n",consensus.hashGenesisBlock.ToString().c_str());
             //printf("block.hashMerkleRoot = %s\n",genesis.hashMerkleRoot.ToString().c_str());
-	    assert(consensus.hashGenesisBlock == uint256S("0x000007e2f67846df1be83addfd2793bedf1566cad33d835029de902d96150a62"));
+	    assert(consensus.hashGenesisBlock == uint256S("0x0000010e08cdaff5220e3db48752673b1b05b08129a2c8121e88350d6d5ef0ef"));
         assert(genesis.hashMerkleRoot == uint256S("0x5441361edd31ed9073d5efc41f2ec32154fbee009d19c7ba32e6f25ff1165a52"));
 
 
@@ -216,8 +216,8 @@ public:
         };*/
        checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x000007e2f67846df1be83addfd2793bedf1566cad33d835029de902d96150a62")),
-            1525618820, // * UNIX timestamp of last checkpoint block
+            ( 0, uint256S("0x0000010e08cdaff5220e3db48752673b1b05b08129a2c8121e88350d6d5ef0ef")),
+            1526191846, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             500	        // * estimated number of transactions per day after checkpoint
@@ -278,8 +278,8 @@ public:
         nDefaultPort = 13717;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nPruneAfterHeight = 1000;
-        uint32_t nTime = 1525617820;
-        uint32_t nNonce = 6836271;
+        uint32_t nTime = 1526191746;
+        uint32_t nNonce = 6892045;
         uint32_t nBits = 504365040;
         int32_t nVersion = 1;
         //const CAmount& genesisReward = 50 * COIN;
@@ -288,7 +288,7 @@ public:
         //genesis = CreateGenesisBlock(1513728000, 21635, 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
-        /**   if(genesis.GetHash() != uint256S("0x"))
+        /** if(genesis.GetHash() != uint256S("0x"))
              {
                      bool fNegative;
                      bool fOverflow;
@@ -316,9 +316,9 @@ public:
                      printf("Testnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
                      printf("Testnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
              }
- */
+         */
 
-       assert(consensus.hashGenesisBlock == uint256S("0x000004e34266593b157700052e04f1746fec56b0fa3744461fac1a19ebb93cef"));
+       assert(consensus.hashGenesisBlock == uint256S("0x000000bcc46441623bf58ecd450460e8ad9465c018c0bcbb6f4d1ceef00f8d5c"));
        assert(genesis.hashMerkleRoot == uint256S("0x5441361edd31ed9073d5efc41f2ec32154fbee009d19c7ba32e6f25ff1165a52"));
 
 
@@ -353,8 +353,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x000004e34266593b157700052e04f1746fec56b0fa3744461fac1a19ebb93cef")),
-            1525514420, // * UNIX timestamp of last checkpoint block
+            ( 0, uint256S("0x000000bcc46441623bf58ecd450460e8ad9465c018c0bcbb6f4d1ceef00f8d5c")),
+            1526191746, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             500	        // * estimated number of transactions per day after checkpoint
@@ -413,8 +413,8 @@ public:
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nDefaultPort = 13617;
         nPruneAfterHeight = 1000;
-        uint32_t nTime = 1525619820;
-        uint32_t nNonce = 691259;
+        uint32_t nTime = 1526191646;
+        uint32_t nNonce = 824823;
         uint32_t nBits = 504655040;
         int32_t nVersion = 1;
         //const CAmount& genesisReward = 50 * COIN;
@@ -423,7 +423,7 @@ public:
         //genesis = CreateGenesisBlock(1513814400, 3, 0x207fffff, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
-        /** if(genesis.GetHash() != uint256S("0x"))
+        /**if(genesis.GetHash() != uint256S("0x"))
              {
                      bool fNegative;
                      bool fOverflow;
@@ -453,7 +453,7 @@ public:
              }
 
          */
-        assert(consensus.hashGenesisBlock == uint256S("0x0000045d919eefdbe041cb918845a50f4361769c5ee354668ec8293fc67c3011"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000f06f0373d435738e2be9b7e042e004718ad9fce41b4f3ec8bf99284925f"));
         assert(genesis.hashMerkleRoot == uint256S("0x5441361edd31ed9073d5efc41f2ec32154fbee009d19c7ba32e6f25ff1165a52"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
@@ -469,7 +469,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x0000045d919eefdbe041cb918845a50f4361769c5ee354668ec8293fc67c3011")),
+            ( 0, uint256S("0x00000f06f0373d435738e2be9b7e042e004718ad9fce41b4f3ec8bf99284925f")),
             0,
             0,
             0

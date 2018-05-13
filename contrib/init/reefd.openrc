@@ -2,26 +2,26 @@
 
 # backward compatibility for existing gentoo layout 
 #
-if [ -d "/var/lib/protoncore/.protoncore" ]; then
-	BITCOIND_DEFAULT_DATADIR="/var/lib/protoncore/.protoncore"
+if [ -d "/var/lib/reefcore/.reefcore" ]; then
+	BITCOIND_DEFAULT_DATADIR="/var/lib/reefcore/.reefcore"
 else
-	BITCOIND_DEFAULT_DATADIR="/var/lib/protond"
+	BITCOIND_DEFAULT_DATADIR="/var/lib/reefd"
 fi
 
-BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/protoncore/proton.conf}
-BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/protond}
-BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/protond.pid}
+BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/reefcore/reef.conf}
+BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/reefd}
+BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/reefd.pid}
 BITCOIND_DATADIR=${BITCOIND_DATADIR:-${BITCOIND_DEFAULT_DATADIR}}
-BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-protoncore}}
-BITCOIND_GROUP=${BITCOIND_GROUP:-protoncore}
-BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/protond}
+BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-reefcore}}
+BITCOIND_GROUP=${BITCOIND_GROUP:-reefcore}
+BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/reefd}
 BITCOIND_NICE=${BITCOIND_NICE:-${NICELEVEL:-0}}
 BITCOIND_OPTS="${BITCOIND_OPTS:-${BITCOIN_OPTS}}"
 
 name="Proton Core Daemon"
 description="Proton cryptocurrency P2P network daemon"
 
-command="/usr/bin/protond"
+command="/usr/bin/reefd"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
 		-conf=\"${BITCOIND_CONFIGFILE}\" \
 		-datadir=\"${BITCOIND_DATADIR}\" \
@@ -71,7 +71,7 @@ checkconfig()
 {
 	if ! grep -qs '^rpcpassword=' "${BITCOIND_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run protond."
+		eerror "ERROR: You must set a secure rpcpassword to run reefd."
 		eerror "The setting must appear in ${BITCOIND_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
