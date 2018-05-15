@@ -172,13 +172,13 @@ UniValue CallRPC(const string& strMethod, const UniValue& params)
     if (req == NULL)
         throw runtime_error("create http request failed");
 
-    // Get creeftials
+    // Get credentials
     std::string strRPCUserColonPass;
     if (mapArgs["-rpcpassword"] == "") {
         // Try fall back to cookie-based authentication if no password is provided
         if (!GetAuthCookie(&strRPCUserColonPass)) {
             throw runtime_error(strprintf(
-                _("Could not locate RPC creeftials. No authentication cookie could be found, and no rpcpassword is set in the configuration file (%s)"),
+                _("Could not locate RPC credentials. No authentication cookie could be found, and no rpcpassword is set in the configuration file (%s)"),
                     GetConfigFile().string().c_str()));
 
         }

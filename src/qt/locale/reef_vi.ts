@@ -4446,7 +4446,7 @@ https://www.transifex.com/projects/p/Reef/</translation>
         <translation>Xén tỉa: việc đồng bộ ví mới đây đã đi quá dữ liệu được xén tỉa. Bạn cần -reindex (download toàn bộ blockchain lần nữa trong trường hợp các nút bị xén tỉa)</translation>
     </message>
     <message>
-        <source>Randomize creeftials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
         <translation>Ngẫu nhiên hoá các chứng thư cho mỗi kết nối qua proxy. Nó bật Tor stream isolation (ngầm định: %u)</translation>
     </message>
     <message>

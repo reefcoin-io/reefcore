@@ -5681,8 +5681,8 @@ https://www.transifex.com/projects/p/Reef/</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Randomize creeftials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
-        <translation>Randomize creeftials for every proxy connection. This enables Tor stream isolation (default: %u)</translation>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <translation>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</translation>
     </message>
     <message>
         <location line="+3"/>

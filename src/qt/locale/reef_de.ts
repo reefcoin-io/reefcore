@@ -4450,7 +4450,7 @@ Reef Core wird heruntergefahren.</translation>
         <translation>Abschneiden ("prune"): die letzte Synchronistion des Wallet endete jenseits der abgeschnittenen Daten. Starten Sie das Wallet mit der Option -reindex neu oder downloaden Sie die komplette Blockchain erneut.</translation>
     </message>
     <message>
-        <source>Randomize creeftials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
         <translation>Zugangsdaten für jede Proxy-Verbindung zufällig generieren. Diese ermöglicht Tors "stream isolation" Feature (Standard: %u)</translation>
     </message>
     <message>

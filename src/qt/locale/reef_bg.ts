@@ -4446,7 +4446,7 @@ https://www.transifex.com/projects/p/Reef/</translation>
         <translation>Изчистване: последното синхронизиране надхвърля почстените данни. Нужен е -reindex (изтегляне на цялата блко-верига в случай на "изчистен" възел)</translation>
     </message>
     <message>
-        <source>Randomize creeftials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
         <translation>произволни удостоверения за всяка прокси връзка. Това дава възможност за изолация Tor потока (по подразбиране: %u)</translation>
     </message>
     <message>

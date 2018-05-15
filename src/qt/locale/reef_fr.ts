@@ -4446,7 +4446,7 @@ https://www.transifex.com/projects/p/Reef/</translation>
         <translation>Elagage : la dernière synchronisation de portefeuille va au delà des données élaguées. Vous devez -reindex er (téllécharger la chaîne complète de nouveau dans le cas d'un noeud élagué)</translation>
     </message>
     <message>
-        <source>Randomize creeftials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
         <translation>Rendre les Identifiant aléatoires pour chaque connection au proxy. Ceci active l'isolation de flux Tor (par défaut : %u)</translation>
     </message>
     <message>

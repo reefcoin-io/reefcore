@@ -2448,7 +2448,7 @@ UniValue keepass(const UniValue& params, bool fHelp) {
 
         keePassInt.updatePassphrase(sPassphrase);
 
-        return "setlogin: Updated creeftials.";
+        return "setlogin: Updated credentials.";
     }
 
     return "Invalid command";

@@ -4446,7 +4446,7 @@ https://www.transifex.com/projects/p/Reef/</translation>
         <translation>Удаление блоков: последняя синхронизация кошелька выходит за рамки удаленных данных. Вам нужно запустить клиента с ключом -reindex (в случае узла с удаленными блоками это означает повторное скачивание всей цепи блоков)</translation>
     </message>
     <message>
-        <source>Randomize creeftials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
         <translation>Использовать случайные учётные данные для каждого прокси-подключения. Эта функция позволяет изолировать потоки Tor (по умолчанию: %u)</translation>
     </message>
     <message>

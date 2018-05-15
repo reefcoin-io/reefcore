@@ -166,7 +166,7 @@ QT_TRANSLATE_NOOP("reef-core", ""
 "Query for peer addresses via DNS lookup, if low on addresses (default: 1 "
 "unless -connect)"),
 QT_TRANSLATE_NOOP("reef-core", ""
-"Randomize creeftials for every proxy connection. This enables Tor stream "
+"Randomize credentials for every proxy connection. This enables Tor stream "
 "isolation (default: %u)"),
 QT_TRANSLATE_NOOP("reef-core", ""
 "Reduce storage requirements by pruning (deleting) old blocks. This mode is "

@@ -4455,7 +4455,7 @@ Käännös päivitetty: 11.3.2017 by AjM.</translation>
         <translation>Karsinta: viimeinen lompakon synkronointi menee yli karsitun datan. Sinun täytyy tehdä -reindex (lataa koko lohkoketjun uudelleen)</translation>
     </message>
     <message>
-        <source>Randomize creeftials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
         <translation>Satunnaista käyttäjätiedot jokaiselle proxy yhteydelle. Tämä ottaa käyttöön Tor virran eristämisen (oletus: %u)</translation>
     </message>
     <message>
