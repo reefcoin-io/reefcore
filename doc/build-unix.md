@@ -1,12 +1,12 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build Proton Core in Unix.
+Some notes on how to build Reef Core in Unix.
 
 (for OpenBSD specific instructions, see [build-openbsd.md](build-openbsd.md))
 
 Note
 ---------------------
-Always use absolute paths to configure and compile Proton Core and the dependencies,
+Always use absolute paths to configure and compile Reef Core and the dependencies,
 for example, when specifying the the path of the dependency:
 
 	../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
@@ -24,7 +24,7 @@ make
 make install # optional
 ```
 
-This will build proton-qt as well if the dependencies are met.
+This will build reef-qt as well if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -54,7 +54,7 @@ System requirements
 --------------------
 
 C++ compilers are memory-hungry. It is recommended to have at least 1 GB of
-memory available when compiling Proton Core. With 512MB of memory or less
+memory available when compiling Reef Core. With 512MB of memory or less
 compilation will take much longer due to swap thrashing.
 
 Dependency Build Instructions: Ubuntu & Debian
@@ -85,7 +85,7 @@ BerkeleyDB 5.1 or later, which break binary wallet compatibility with the distri
 are based on BerkeleyDB 4.8. If you do not care about wallet compatibility,
 pass `--with-incompatible-bdb` to configure.
 
-See the section "Disable-wallet mode" to build Proton Core without wallet.
+See the section "Disable-wallet mode" to build Reef Core without wallet.
 
 Optional:
 
@@ -98,7 +98,7 @@ ZMQ dependencies:
 Dependencies for the GUI: Ubuntu & Debian
 -----------------------------------------
 
-If you want to build Proton-Qt, make sure that the required packages for Qt development
+If you want to build Reef-Qt, make sure that the required packages for Qt development
 are installed. Either Qt 5 or Qt 4 are necessary to build the GUI.
 If both Qt 4 and Qt 5 are installed, Qt 5 will be used. Pass `--with-gui=qt4` to configure to choose Qt4.
 To build without GUI pass `--without-gui`.
@@ -115,7 +115,7 @@ libqrencode (optional) can be installed with:
 
     sudo apt-get install libqrencode-dev
 
-Once these are installed, they will be found by configure and a proton-qt executable will be
+Once these are installed, they will be found by configure and a reef-qt executable will be
 built by default.
 
 Notes
@@ -217,7 +217,7 @@ Hardening enables the following features:
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./protond`
+    `scanelf -e ./reefd`
 
     the output should contain:
 	STK/REL/PTL
@@ -227,7 +227,7 @@ Hardening enables the following features:
 
 Disable-wallet mode
 --------------------
-When the intention is to run only a P2P node without a wallet, Proton Core may be compiled in
+When the intention is to run only a P2P node without a wallet, Reef Core may be compiled in
 disable-wallet mode with:
 
     ./configure --disable-wallet
