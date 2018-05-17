@@ -9,7 +9,7 @@
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
 
 /* Version Build */
-#define CLIENT_VERSION_BUILD 2
+#define CLIENT_VERSION_BUILD 1
 
 /* Version is release */
 #define CLIENT_VERSION_IS_RELEASE true
@@ -18,7 +18,7 @@
 #define CLIENT_VERSION_MAJOR 0
 
 /* Minor version */
-#define CLIENT_VERSION_MINOR 5
+#define CLIENT_VERSION_MINOR 6
 
 /* Build revision */
 #define CLIENT_VERSION_REVISION 0
@@ -356,7 +356,7 @@
 #define PACKAGE_NAME "Reef Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Reef Core 2.0.0"
+#define PACKAGE_STRING "Reef Core 0.5.1"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "reefcore"
@@ -365,7 +365,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "2.0.0"
+#define PACKAGE_VERSION "0.5.1"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */

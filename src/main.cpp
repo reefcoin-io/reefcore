@@ -1763,39 +1763,39 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         nPOW =  5 * COIN;
         nSubsidy = nPOW;
     }
-    if (nPrevHeight > 500 && nPrevHeight < 5001){
+    if (nPrevHeight > 500 && nPrevHeight < 50001){
         nPOW =  5000 * COIN;
         nSubsidy = nPOW;
     }
-    if (nPrevHeight > 5000 && nPrevHeight < 50001){
+    if (nPrevHeight > 50000 && nPrevHeight < 500001){
         nPOW =  4375 * COIN;
         nSubsidy = nPOW * 0.75;
     }
-    if (nPrevHeight > 50000 && nPrevHeight < 100001){
+    if (nPrevHeight > 500000 && nPrevHeight < 1000001){
         nPOW =  3750 * COIN;
         nSubsidy = nPOW * 0.65;
     }
-    if (nPrevHeight > 100000 && nPrevHeight < 350001){
+    if (nPrevHeight > 1000000 && nPrevHeight < 3500001){
         nPOW =  3125 * COIN;
         nSubsidy = nPOW * 0.55;
     }
-    if (nPrevHeight > 350000 && nPrevHeight < 500001){
+    if (nPrevHeight > 3500000 && nPrevHeight < 5000001){
         nPOW =  2500 * COIN;
         nSubsidy = nPOW * 0.45;
     }
-    if (nPrevHeight > 500000 && nPrevHeight < 750001){
+    if (nPrevHeight > 5000000 && nPrevHeight < 7500001){
         nPOW =  1875 * COIN;
         nSubsidy = nPOW * 0.35;
     }
-    if (nPrevHeight > 750000 && nPrevHeight < 1000001){
+    if (nPrevHeight > 7500000 && nPrevHeight < 10000001){
         nPOW =  1250 * COIN;
         nSubsidy = nPOW * 0.25;
     }
-    if (nPrevHeight > 1000000 && nPrevHeight < 1250001){
+    if (nPrevHeight > 10000000 && nPrevHeight < 12500001){
         nPOW =  625 * COIN;
         nSubsidy = nPOW * 0.15;
     }
-    if (nPrevHeight > 1250000){
+    if (nPrevHeight > 12500000){
         nPOW =  625 * COIN;
         nSubsidy = nPOW * 0.05;
     }
